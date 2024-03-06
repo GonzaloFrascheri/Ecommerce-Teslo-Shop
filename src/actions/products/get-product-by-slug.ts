@@ -2,32 +2,38 @@
 
 import prisma from "@/lib/prima";
 
-export const getProductBySlug = async(slug: string) => {
+export const getProductBySlug = async( slug: string ) => {
 
-    try {
-        
-        const product = await prisma.product.findFirst({
-            include:{
-                ProductImage: {
-                    select: {
-                        url: true
-                    }
-                }
-            },
-            where: {
-                slug: slug,
-            }
-        })
 
-        if( !product ) return null;
+  try {
 
-        return{
-            ...product,
-            images: product.ProductImage.map( image => image.url )
-        };
+    const product = await prisma.product.findFirst({
+      include: {
+        ProductImage: {
+          select: {
+            url: true
+          }
+        }
+      },
+      where: {
+        slug: slug,
+      }
+    })
 
-    } catch (error) {
-        console.log(error);
-        throw new Error('Error al obtener el producto por slug');
-    }
+
+    if ( !product ) return null;
+
+    return {
+      ...product,
+      images: product.ProductImage.map( image => image.url )
+    };
+
+    
+  } catch (error) {
+    console.log(error);
+    throw new Error('Error al obtener producto por slug');
+  }
+
+
+
 }

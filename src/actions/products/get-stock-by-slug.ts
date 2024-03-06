@@ -1,26 +1,28 @@
-'use server'
+'use server';
 
 import prisma from "@/lib/prima";
-// import { sleep } from "@/utils";
+
+
+// import { sleep } from '@/utils';
 
 
 export const getStockBySlug = async( slug: string ): Promise<number> => {
 
-    try {
+  try {
 
-        // await sleep(3);
-        
-        const stock = await prisma.product.findFirst({
-            where: {
-                slug
-            },
-            select: { inStock: true }
-        });
+    // await sleep(3);
 
-        return stock?.inStock ?? 0;
 
-    } catch (error) {
+    const stock = await prisma.product.findFirst({
+      where: { slug },
+      select: { inStock: true }
+    });
 
-        throw new Error('No se pudo obtener el total de Stock de la BD');
-    }
+    return stock?.inStock ?? 0;
+
+  } catch (error) {
+    return 0;
+  }
+
+
 }

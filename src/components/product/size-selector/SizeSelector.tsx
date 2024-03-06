@@ -23,7 +23,7 @@ export const SizeSelector = ({ selectedSize, availableSizes, onSizeChanged }: Pr
           availableSizes.map( size => (
             <button 
               key={ size }
-              onClick={ () => onSizeChanged(size)}
+              onClick={ () => onSizeChanged(size) }
               className={
                 clsx(
                   "mx-2 hover:underline text-lg",

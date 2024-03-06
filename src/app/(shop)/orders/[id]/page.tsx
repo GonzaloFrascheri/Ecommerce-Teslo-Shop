@@ -97,9 +97,13 @@ export default function OrdersByIdPage( { params }: Props ) {
 
             <h2 className="text-2xl mb-2">Dirección de entrega</h2>
             <div className="mb-10">
-              <p className="text-xl">Gonzalo Frascheri</p>
-              <p>Joaquin Requena 1670</p>
-              <p>11200</p>
+              <p className="text-xl">Fernando Herrera</p>
+              <p>Av. Siempre viva 123</p>
+              <p>Col. Centro</p>
+              <p>Alcaldía Cuauhtémoc</p>
+              <p>Ciudad de México</p>
+              <p>CP 123123</p>
+              <p>123.123.123</p>
             </div>
 
             {/* Divider */ }

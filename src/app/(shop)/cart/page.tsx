@@ -1,15 +1,19 @@
 import Link from 'next/link';
 
-import { redirect } from 'next/navigation';
 
-import {  Title } from '@/components';
+
+import { Title } from '@/components';
 import { ProductsInCart } from './ui/ProductsInCart';
 import { OrderSummary } from './ui/OrderSummary';
+
+
+
 
 export default function CartPage() {
 
 
   // redirect('/empty');
+
 
 
   return (
@@ -32,7 +36,8 @@ export default function CartPage() {
 
 
           {/* Items */ }
-          <ProductsInCart />
+            <ProductsInCart />
+         
            </div>
 
 
@@ -51,9 +56,19 @@ export default function CartPage() {
                 Checkout
               </Link>
             </div>
+
+
           </div>
+
+
+
         </div>
+
+
+
       </div>
+
+
     </div>
   );
 }
