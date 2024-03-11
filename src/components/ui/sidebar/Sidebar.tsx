@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import clsx from "clsx";
+import { useSession } from "next-auth/react";
 import {
   IoCloseOutline,
   IoLogInOutline,
@@ -15,7 +16,6 @@ import {
 
 import { useUIStore } from "@/store";
 import { logout } from "@/actions";
-import { useSession } from "next-auth/react";
 
 export const Sidebar = () => {
   const isSideMenuOpen = useUIStore((state) => state.isSideMenuOpen);
@@ -79,7 +79,8 @@ export const Sidebar = () => {
             </Link>
 
             <Link
-              href="/"
+              href="/orders"
+              onClick={() => closeMenu()}
               className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
             >
               <IoTicketOutline size={30} />
