@@ -1,6 +1,6 @@
 'use server';
 
-import prisma from "@/lib/prima";
+import prisma from "@/lib/prisma";
 
 export const getProductBySlug = async( slug: string ) => {
 

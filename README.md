@@ -5,13 +5,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ##Correr en dev
+
 1. Clonar el repositorio
 2. Crear una copia del archivo ".env" y renombrarlo a ".env.template" y cambiar las variables de entorno
 3. Instalar las dependencias necesarias "npm install"
 4. Levantar la base de datos "docker compose up -d"
 5. Correr las migraciones de Prisma `` npx prisma migrate dev`
 6. Ejecutar seed ``npm run seed`
-7. Correr el proyecto: "npm run dev"
+7. Limpiar el localStorage del navegador
+8. Correr el proyecto: "npm run dev"
 
 ```bash
 npm run dev 

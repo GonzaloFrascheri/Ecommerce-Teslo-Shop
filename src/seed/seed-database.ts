@@ -1,9 +1,7 @@
 
 import { initialData } from './seed';
-import prisma from '@/lib/prisma';
 import { countries } from './seed.countries';
-
-
+import prisma from '../lib/prisma';
 
 
 async function main() {

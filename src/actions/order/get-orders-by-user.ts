@@ -1,7 +1,7 @@
 'use server';
 
 import { auth } from '@/auth.config';
-import prisma from '@/lib/prima';
+import prisma from '@/lib/prisma';
 
 
 
