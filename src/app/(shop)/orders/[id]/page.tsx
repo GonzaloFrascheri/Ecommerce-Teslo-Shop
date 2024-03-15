@@ -1,17 +1,9 @@
-
-
-import { OrderStatus, PayPalButton, Title } from "@/components";
-import { initialData } from "@/seed/seed";
-import Image from "next/image";
-import { getOrderById } from "@/actions/order/get-order-by-id";
 import { redirect } from "next/navigation";
-import { currencyFormat } from "@/utils";
+import Image from "next/image";
 
-const productsInCart = [
-  initialData.products[0],
-  initialData.products[1],
-  initialData.products[2],
-];
+import { getOrderById } from "@/actions/order/get-order-by-id";
+import { currencyFormat } from "@/utils";
+import { OrderStatus, PayPalButton, Title } from "@/components";
 
 interface Props {
   params: {
@@ -40,8 +32,7 @@ export default async function OrdersByIdPage({ params }: Props) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {/* Carrito */}
           <div className="flex flex-col mt-5">
-            
-            <OrderStatus isPaid= { order?.isPaid ?? false } />
+            <OrderStatus isPaid={order?.isPaid ?? false} />
 
             {/* Items */}
             {order!.OrderItem.map((item) => (
@@ -117,19 +108,13 @@ export default async function OrdersByIdPage({ params }: Props) {
               </span>
             </div>
 
-            <div className="mt-5 mb-2 w-full"/>
-            {
-              order?.isPaid
-              ? (
-                <OrderStatus isPaid= { order?.isPaid ?? false } />
-              )
-              : (
-                <PayPalButton 
-                  amount={ order!.total}
-                  orderId={ order!.id }
-                />
-              )
-            }
+            <div className="mt-5 mb-2 w-full">
+              {order?.isPaid ? (
+                <OrderStatus isPaid={order?.isPaid ?? false} />
+              ) : (
+                <PayPalButton amount={order!.total} orderId={order!.id} />
+              )}
+            </div>
           </div>
         </div>
       </div>

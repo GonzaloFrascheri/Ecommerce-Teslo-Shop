@@ -9,7 +9,7 @@ export const getPaginatedOrders = async() => {
 
   const session = await auth();
 
-  if ( session?.user.role !== 'admin' ) {
+  if ( session?.user.role !== 'admin'  ) {
     return {
       ok: false,
       message: 'Debe de estar autenticado'
@@ -18,7 +18,7 @@ export const getPaginatedOrders = async() => {
 
   const orders = await prisma.order.findMany({
     orderBy: {
-        createdAt: 'desc'
+      createdAt: 'desc'
     },
     include: {
       OrderAddress: {

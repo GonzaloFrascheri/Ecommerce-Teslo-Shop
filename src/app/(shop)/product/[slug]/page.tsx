@@ -1,18 +1,15 @@
-export const revalidate = 604800; //7 días
 import { Metadata, ResolvingMetadata } from "next";
-
 import { notFound } from "next/navigation";
-
 import { titleFont } from "@/config/fonts";
 import {
   ProductMobileSlideshow,
   ProductSlideshow,
-  QuantitySelector,
-  SizeSelector,
   StockLabel,
 } from "@/components";
 import { getProductBySlug } from "@/actions";
 import { AddToCart } from './ui/AddToCart';
+
+export const revalidate = 604800; //7 días
 
 interface Props {
   params: {

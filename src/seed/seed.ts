@@ -51,7 +51,7 @@ export const initialData: SeedData = {
       role: 'user'
     },
   ],
-
+    
 
   categories: [
     'Shirts', 'Pants', 'Hoodies', 'Hats'
