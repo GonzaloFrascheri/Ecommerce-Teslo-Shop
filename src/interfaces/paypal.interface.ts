@@ -10,66 +10,66 @@ export interface PayPalOrderStatusResponse {
     create_time:    string;
     update_time:    string;
     links:          Link[];
-}
-
-export interface Link {
+  }
+  
+  export interface Link {
     href:   string;
     rel:    string;
     method: string;
-}
-
-export interface Payer {
+  }
+  
+  export interface Payer {
     name:          PayerName;
     email_address: string;
     payer_id:      string;
     address:       PayerAddress;
-}
-
-export interface PayerAddress {
+  }
+  
+  export interface PayerAddress {
     country_code: string;
-}
-
-export interface PayerName {
+  }
+  
+  export interface PayerName {
     given_name: string;
     surname:    string;
-}
-
-export interface PaymentSource {
+  }
+  
+  export interface PaymentSource {
     paypal: Paypal;
-}
-
-export interface Paypal {
+  }
+  
+  export interface Paypal {
     email_address:  string;
     account_id:     string;
     account_status: string;
     name:           PayerName;
     address:        PayerAddress;
-}
-
-export interface PurchaseUnit {
+  }
+  
+  export interface PurchaseUnit {
     reference_id: string;
     amount:       Amount;
     payee:        Payee;
     shipping:     Shipping;
     payments:     Payments;
-    invoice_id: string;
-}
-
-export interface Amount {
+    invoice_id:   string;
+  }
+  
+  export interface Amount {
     currency_code: string;
     value:         string;
-}
-
-export interface Payee {
+  }
+  
+  export interface Payee {
     email_address: string;
     merchant_id:   string;
-}
-
-export interface Payments {
+  }
+  
+  export interface Payments {
     captures: Capture[];
-}
-
-export interface Capture {
+  }
+  
+  export interface Capture {
     id:                          string;
     status:                      string;
     amount:                      Amount;
@@ -79,32 +79,32 @@ export interface Capture {
     links:                       Link[];
     create_time:                 string;
     update_time:                 string;
-}
-
-export interface SellerProtection {
+  }
+  
+  export interface SellerProtection {
     status:             string;
     dispute_categories: string[];
-}
-
-export interface SellerReceivableBreakdown {
+  }
+  
+  export interface SellerReceivableBreakdown {
     gross_amount: Amount;
     paypal_fee:   Amount;
     net_amount:   Amount;
-}
-
-export interface Shipping {
+  }
+  
+  export interface Shipping {
     name:    ShippingName;
     address: ShippingAddress;
-}
-
-export interface ShippingAddress {
+  }
+  
+  export interface ShippingAddress {
     address_line_1: string;
     admin_area_2:   string;
     admin_area_1:   string;
     postal_code:    string;
     country_code:   string;
-}
-
-export interface ShippingName {
+  }
+  
+  export interface ShippingName {
     full_name: string;
-}
+  }
