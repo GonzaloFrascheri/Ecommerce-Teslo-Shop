@@ -54,30 +54,37 @@ export const Sidebar = () => {
           onClick={() => closeMenu()}
         />
         
-        <div className="flex flex-col space-y-6 mt-10">
-          {/* Links para mobile */}
-          <Link
-            href="/gender/men"
-            onClick={closeMenu}
-            className="flex items-center p-2 hover:bg-gray-100 rounded transition-all"
-          >
-            <span className="ml-3 text-xl">Hombres</span>
-          </Link>
-          <Link
-            href="/gender/women"
-            onClick={closeMenu}
-            className="flex items-center p-2 hover:bg-gray-100 rounded transition-all"
-          >
-            <span className="ml-3 text-xl">Mujeres</span>
-          </Link>
-          <Link
-            href="/gender/kid"
-            onClick={closeMenu}
-            className="flex items-center p-2 hover:bg-gray-100 rounded transition-all"
-          >
-            <span className="ml-3 text-xl">Niños</span>
-          </Link>
+        <div className="flex flex-col space-y-4 mt-10">
+          {/* Links de categorías para mobile/tablet */}
+          <div className="md:hidden">
+            <Link
+              href="/gender/men"
+              onClick={closeMenu}
+              className="flex items-center p-2 hover:bg-gray-100 rounded transition-all"
+            >
+              <IoShirtOutline size={30} />
+              <span className="ml-3 text-xl">Hombres</span>
+            </Link>
+            <Link
+              href="/gender/women"
+              onClick={closeMenu}
+              className="flex items-center p-2 mt-4 hover:bg-gray-100 rounded transition-all"
+            >
+              <IoShirtOutline size={30} />
+              <span className="ml-3 text-xl">Mujeres</span>
+            </Link>
+            <Link
+              href="/gender/kid"
+              onClick={closeMenu}
+              className="flex items-center p-2 mt-4 hover:bg-gray-100 rounded transition-all"
+            >
+              <IoShirtOutline size={30} />
+              <span className="ml-3 text-xl">Niños</span>
+            </Link>
+          </div>
 
+          {/* Separador */}
+          <div className="w-full h-px bg-gray-200 my-5" />
           {/* Aquí van tus links y botones */}
           {isAuthenticated && (
             <>
